@@ -16,5 +16,8 @@ end
 
 ## Documentation
 
-### After getting the code and installing the dependencies, run the following command to get the docs 
-#### mix docs
+### After getting the code and installing the dependencies, run `mix docs` command to get the docs 
+
+## Testing
+
+### Use `mix test` command
