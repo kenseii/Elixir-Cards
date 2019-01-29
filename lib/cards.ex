@@ -1,4 +1,7 @@
 defmodule Cards do
+  @doc """
+  Returns a list of strings reprensenting a deck of cards
+  """
   def create_deck do
     values = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
     suits = ["Spades","Clubs","Hearts","Diamonds"]
@@ -8,21 +11,26 @@ defmodule Cards do
                 "#{value} of #{suit}"
     end
   end
-  # Method to shuffle the order of a list cards
+  @doc """
+  Method to shuffle the order of a list cards
+  """
   def shuffle(deck) do
     Enum.shuffle(deck)
 
   end
-  # Method to check if a deck contains a certain card and return true/false
+  @doc """
+  Method to check if a deck contains a certain card and return true/false
+  """
   def contains?(deck, card) do
     Enum.member?(deck, card)
 
   end
 
-  # Method to pick a set of card(hand) given all cards and hand size
-  # basically it splits the given cards in [hand,the rest], while the hand's length is is the hand size
-  # Using pattern matching i only return the hand content without the remaining cards
-  @spec deal(any(), integer()) :: {[any()], [any()]}
+  @doc """
+  Method to pick a set of card(hand) given all cards and hand_size as `deck` and `hand_size` args.
+  Basically it splits the given cards in [hand,the rest], while the hand's length is is the hand size.
+  Using pattern matching it only returns the hand content without the remaining cards.
+  """
   def deal(deck,hand_size) do
     {hand,_remaining_cards} = Enum.split(deck,hand_size)
     hand
