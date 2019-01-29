@@ -19,7 +19,14 @@ defmodule Cards do
 
   end
   @doc """
-  Method to check if a deck contains a certain card and return true/false
+  Method to check if a deck contains a certain card and return true/false.
+  It requires both `deck` and `card` variables, deck being all the cards, and card being the one to search.
+
+  ## Examples
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck,"Ace of Spades")
+      true
+
   """
   def contains?(deck, card) do
     Enum.member?(deck, card)
